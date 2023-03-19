@@ -16,10 +16,14 @@ class ProduitFactory extends Factory
      */
     public function definition(): array
     {
+        $width=300;
+        $height=400;
+        $path=$this->faker->image('storage/produits',$width,$height,'product',true,true,'product',false);
         return [
             "reference"=>$this->faker->sentence(),
             "designation"=>$this->faker->text(),
             "quantite"=>$this->faker->numberBetween(4,20),
+            "photo"=>$path,
             "prix"=>$this->faker->numberBetween(20,2000),
         ];
     }
