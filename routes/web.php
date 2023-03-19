@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {return view('welcome');});
 
 Route::resource('/produits',ProduitController::class);
+Route::get('/produits/find/{id}',[ProduitController::class,'edit'])->name('findbyId');
